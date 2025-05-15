@@ -29,8 +29,8 @@ A Python-based automation script that scans one or multiple IPs/domains using **
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/NoIdea00/Ports-and-Services-Scanning-.git
-   cd port-scanner-automation
+   git clone https://github.com/NoIdea00/Ports-and-Services-Scanning.git
+   cd Ports-and-Services-Scanning
    ```
 
 2. **Install Python dependencies:**
