@@ -29,7 +29,7 @@ A Python-based automation script that scans one or multiple IPs/domains using **
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/NoIdea00/port-scanner-automation.git
+   git clone https://github.com/NoIdea00/Ports-and-Services-Scanning-.git
    cd port-scanner-automation
    ```
 
