@@ -1,74 +1,112 @@
-# 🔍 Port Scanner with Naabu & Nmap
+# 🔍 Port Scanner Automation Script
 
-A lightweight Bash script to automate port scanning using [Naabu](https://github.com/projectdiscovery/naabu) and [Nmap](https://nmap.org/). It supports scanning individual IPs or domains as well as multiple targets from a file. All results are timestamped and saved in organized directories for easy review.
-
-## 🚀 Features
-
-- ✅ Validates IPv4 and domain inputs
-- 📁 Saves organized scan results per target and timestamp
-- 🛠️ Uses:
-  - [Naabu](https://github.com/projectdiscovery/naabu) for fast port discovery
-  - [Nmap](https://nmap.org/) for service and version detection
-- 📜 Logs all output into detailed logs for each scan
-- 📦 Batch scan support via input file
-
-## 🧪 Requirements
-
-- `bash`
-- `naabu`
-- `nmap`
-
-Ensure both `naabu` and `nmap` are installed and available in your system `$PATH`.
-
-## 📦 Installation
-
-```bash
-git clone https://github.com/your-username/port-scan-tool.git
-cd port-scan-tool
-chmod +x port-scan.sh
-```
-
-## 🛠 Usage
-
-### Scan a single target:
-```bash
-./port-scan.sh example.com
-```
-
-### Scan multiple targets from file:
-```bash
-./port-scan.sh -f targets.txt
-```
-
-File format:
-```
-example.com
-192.168.0.1
-```
-
-### Display help:
-```bash
-./port-scan.sh -h
-```
-
-## 📂 Output Structure
-
-Each scan creates a structured directory:
-```
-scans/
-└── example.com/
-    └── 20250515-1430/
-        ├── naabu.txt
-        ├── nmap.txt
-        └── scan.log
-```
-
-## 📃 License
-
-This project is licensed under the MIT License.
+A Python-based automation script that scans one or multiple IPs/domains using **Naabu** and **Nmap**. It performs quick port discovery with Naabu and detailed service detection using Nmap, saving structured results for later review.
 
 ---
 
-### 📬 Contribution
+## 🚀 Features
 
-No Thanks!
+- 🔎 Validates input as IP or domain
+- 📁 Creates organized scan directories per target and timestamp
+- ⚡ Runs:
+  - `naabu` for fast port detection
+  - `nmap` for service/version detection
+- 📝 Generates logs and summary reports
+- 📊 Option to compile all Nmap results into a single file
+
+---
+
+## 🧰 Requirements
+
+- Python 3.6+
+- [Naabu](https://github.com/projectdiscovery/naabu)
+- [Nmap](https://nmap.org)
+
+---
+
+## 📦 Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/port-scanner-automation.git
+   cd port-scanner-automation
+   ```
+
+2. **Install Python dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Ensure external tools are installed and in PATH:**
+
+   - Naabu: `go install github.com/projectdiscovery/naabu/v2/cmd/naabu@latest`
+   - Nmap: [Install from official site](https://nmap.org/download.html) or via package manager.
+
+---
+
+## 🛠 Usage
+
+### Scan a single domain or IP
+
+```bash
+python3 scanner.py example.com
+```
+
+### Scan multiple targets from a file
+
+```bash
+python3 scanner.py -f targets.txt
+```
+
+---
+
+## 📂 Output Structure
+
+Scans are saved under the `scans/` directory:
+
+```
+scans/
+├── example.com/
+│   └── 20240515-1200/
+│       ├── naabu.txt
+│       ├── nmap.txt
+│       └── scan.log
+```
+
+---
+
+## 📊 Summary & Compilation
+
+After scans are complete, a summary report is printed, and you’ll be prompted to compile all Nmap results into one file (`compiled_nmap_results.txt`).
+
+---
+
+## 🧪 Example
+
+```bash
+python3 scanner.py 192.168.1.1
+```
+
+```bash
+python3 scanner.py -f list_of_targets.txt
+```
+
+---
+
+## 🤝 Contributions
+
+Pull requests and issues are welcome! Feel free to fork and improve.
+
+---
+
+## ⚠️ Disclaimer
+
+This tool is intended for **authorized testing and educational purposes only**. Unauthorized scanning may be illegal.
+
+---
+
+## 📄 License
+
+MIT License
